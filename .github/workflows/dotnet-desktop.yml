@@ -63,13 +63,11 @@ jobs:
 
     steps:
       - name: List all files and folders
-        run: |
-          ls
-          echo -----------------------
+        run: ls
       - name: Create a folder
         run: mkdir ashok-app
       - name: Create a file
-        run: REM. > my-file.txt
+        run: copy NUL my-file.txt
       - name: List all files and folders
         run: ls
     # steps:
