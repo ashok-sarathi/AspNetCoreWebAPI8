@@ -59,7 +59,10 @@ jobs:
           ls
       
     - name: Run dotnet app
-      run: dotnet run -c development
-
-    - name: Request API
-      run: curl http://localhost:5091/api/WeatherForecast/GetWeatherForecast
+      run: |
+          cd ./AspNetCoreWebAPI8/
+          dotnet run -c development --project ./AspNetCoreWebAPI8.csproj
+          echo "_______________________________________________________________________"
+          curl http://localhost:5091/api/WeatherForecast/GetWeatherForecast
+          echo "_______________________________________________________________________"
+          
