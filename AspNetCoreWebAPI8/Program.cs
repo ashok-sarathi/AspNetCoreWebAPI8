@@ -1,5 +1,3 @@
-using AspNetCoreWebAPI8.Models;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
