@@ -7,29 +7,29 @@ on:
 
 jobs:
 
-  # file-operations:
+  file-operations:
 
-  #   runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-  #   env:
-  #     File_Name: Ashok-File
-  #     Folder_Name: Ashok-Folder 
+    env:
+      File_Name: Ashok-File
+      Folder_Name: Ashok-Folder 
 
-  #   steps:
-  #     - name: List all files and folders
-  #       run: ls
+    steps:
+      - name: List all files and folders
+        run: ls
 
-  #     - name: Create a folder 2
-  #       run: mkdir ${{env.Folder_Name}}
+      - name: Create a folder 2
+        run: mkdir ${{env.Folder_Name}}
 
-  #     - name: Create a folder 2
-  #       run: mkdir ashok-app-2
+      - name: Create a folder 2
+        run: mkdir ashok-app-2
 
-  #     - name: Create a file
-  #       run: touch ${{env.File_Name}}.txt
+      - name: Create a file
+        run: touch ${{env.File_Name}}.txt
 
-  #     - name: List all files and folders
-  #       run: ls
+      - name: List all files and folders
+        run: ls
   
 
   build:
@@ -37,29 +37,29 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    # - name: Checkout
-    #   uses: actions/checkout@v4
+    - name: Checkout
+      uses: actions/checkout@v4
 
-    # - name: List all files
-    #   run: ls
+    - name: List all files
+      run: ls
 
-    # - name: Install .NET Core
-    #   uses: actions/setup-dotnet@v4
-    #   with:
-    #     dotnet-version: 8.0.x
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
 
-    # - name: Build the app
-    #   run: |
-    #       ls
-    #       cd ./AspNetCoreWebAPI8/
-    #       echo "Dotnet restore started"
-    #       dotnet restore
-    #       dotnet publish ./AspNetCoreWebAPI8.csproj --no-restore -o Dotnet-TargetApp
-    #       echo "Dotnet restore compleated"
-    #       ls
+    - name: Build the app
+      run: |
+          ls
+          cd ./AspNetCoreWebAPI8/
+          echo "Dotnet restore started"
+          dotnet restore
+          dotnet publish ./AspNetCoreWebAPI8.csproj --no-restore -o Dotnet-TargetApp
+          echo "Dotnet restore compleated"
+          ls
       
-    # - name: Run dotnet app
-    #   run: dotnet run -c development
+    - name: Run dotnet app
+      run: dotnet run -c development
 
     - name: Request API
-      run: curl https://www.geeksforgeeks.org
+      run: curl http://localhost:5091/api/WeatherForecast/GetWeatherForecast
