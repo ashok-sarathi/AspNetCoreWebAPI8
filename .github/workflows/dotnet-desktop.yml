@@ -64,8 +64,10 @@ jobs:
     steps:
       - name: List all files and folders
         run: ls
-      - name: Create a folder
-        run: mkdir ashok-app
+      - name: Create a folder 2
+        run: mkdir ashok-app-1
+      - name: Create a folder 2
+        run: mkdir ashok-app-2
       - name: Create a file
         run: touch my-file.txt
       - name: List all files and folders
