@@ -94,10 +94,12 @@ jobs:
           cd ./AspNetCoreWebAPI8/
           echo "Dotnet restore started"
           dotnet restore
-          dotnet publish ./AspNetCoreWebAPI8.csproj --no-restore -o Dotnet-TargetApp /p:ASPNETCORE_ENVIRONMENT=Development
+          dotnet publish ./AspNetCoreWebAPI8.csproj --no-restore -o Dotnet-TargetApp
           echo "Dotnet restore compleated"
           ls
-
+      
+    - name: Run dotnet app
+      run: dotnet run -c development
 
     # # Restore the application to populate the obj folder with RuntimeIdentifiers
     # - name: Restore the application
