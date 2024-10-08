@@ -62,11 +62,16 @@ jobs:
       Wap_Project_Path: your-wap-project-path                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
 
     steps:
-      - name: Show Console
+      - name: List all files and folders
         run: |
           ls
-          mkdir ashok-app
-          ls
+          echo -----------------------
+      - name: Create a folder
+        run: mkdir ashok-app
+      - name: Create a file
+        run: REM. > my-file.txt
+      - name: List all files and folders
+        run: ls
     # steps:
     # - name: Checkout
     #   uses: actions/checkout@v4
