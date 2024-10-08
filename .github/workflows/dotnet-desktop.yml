@@ -91,7 +91,7 @@ jobs:
     - name: Build the app
       run: |
           ls
-          cd ./AspNetCoreWebAPI8/AspNetCoreWebAPI8/
+          cd ./AspNetCoreWebAPI8/
           echo "Dotnet restore started"
           dotnet restore
           dotnet publish ./AspNetCoreWebAPI8.csproj --no-restore -o Dotnet-TargetApp /p:ASPNETCORE_ENVIRONMENT=Development
