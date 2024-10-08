@@ -48,10 +48,6 @@ jobs:
 
   file-operations:
 
-    # strategy:
-    #   matrix:
-    #     configuration: [Debug, Release]
-
     runs-on: ubuntu-latest  # For a list of available runner types, refer to
                              # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
     env:
@@ -61,15 +57,20 @@ jobs:
     steps:
       - name: List all files and folders
         run: ls
+
       - name: Create a folder 2
         run: mkdir ${{env.Folder_Name}}
+
       - name: Create a folder 2
         run: mkdir ashok-app-2
+
       - name: Create a file
         run: touch ${{env.File_Name}}.txt
+
       - name: List all files and folders
         run: ls
   
+
   build:
 
     runs-on: windows-latest
@@ -81,19 +82,15 @@ jobs:
     - name: List all files
       run: ls
 
-    # # Install the .NET Core workload
-    # - name: Install .NET Core
-    #   uses: actions/setup-dotnet@v4
-    #   with:
-    #     dotnet-version: 8.0.x
+    # Install the .NET Core workload
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
 
-    # # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
-    # - name: Setup MSBuild.exe
-    #   uses: microsoft/setup-msbuild@v2
-
-    # # Execute all unit tests in the solution
-    # - name: Execute unit tests
-    #   run: dotnet test
+    - name: Build the app
+      run: |
+          ls
 
     # # Restore the application to populate the obj folder with RuntimeIdentifiers
     # - name: Restore the application
